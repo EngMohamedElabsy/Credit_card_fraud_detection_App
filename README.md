@@ -1,29 +1,52 @@
-# 💳 Credit Card Fraud Detection App
+# Credit_card_fraud_detection_App 💳
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B)
-![XGBoost](https://img.shields.io/badge/Model-XGBoost-green)
+A machine learning-powered web application designed to detect fraudulent credit card transactions in real-time. This project utilizes an **XGBoost Classifier** model to analyze transaction patterns and identify potential risks based on historical data. 
 
-## 📌 Project Concept
-The **Credit Card Fraud Detection App** is a robust machine learning system designed to identify fraudulent transactions in real-time. In an era of digital payments, protecting customers from unauthorized activity is paramount. 
+## 🌐 Live Demo
+You can access the live application here:  
+**[Credit Card Fraud Detection App](https://creditcardfrauddetectionapp-f5capphozzzzs6sxhvue5dk.streamlit.app/)**
 
-This project handles the entire data science lifecycle: from processing complex features like merchant location and user profession to solving the challenge of **imbalanced data** using **SMOTE**. The final result is a high-performance **XGBoost** model served through an intuitive **Streamlit** dashboard.
+## 📝 Project Overview
+The goal of this project is to build a robust system capable of distinguishing between legitimate and fraudulent credit card activities. The model was trained on a large dataset containing various transaction attributes like amount, category, merchant details, and geographic location.
 
-## 📊 Dataset Information
-The model was trained using the **Credit Card Fraud Detection** dataset from Kaggle, which includes simulated credit card transactions covering a wide range of scenarios.
+### Key Features:
+* **Real-time Prediction:** Input transaction details manually to get an instant fraud probability score.
+* **Automated Preprocessing:** The app automatically handles feature engineering (extracting hour, day, and month from timestamps) and geographic distance calculations.
+* **Robust Encoding:** Uses saved `LabelEncoders` and `StandardScaler` to ensure consistency between training and production data.
+* **High Performance:** Powered by an optimized XGBoost model for high accuracy and recall.
 
-* **Source:** [Kaggle - Credit Card Fraud Detection Dataset](https://www.kaggle.com/datasets/kartik2112/fraud-detection)
-* **Key Features:** Merchant details, category of spend, transaction amount, geographic coordinates (Lat/Long), and user job profiles.
+## 📊 Dataset
+The dataset used for training and testing is the **Credit Card Fraud Detection** dataset available on Kaggle. It contains simulated credit card transactions including both legitimate and fraudulent samples.
+* **Original Data Link:** [Kaggle - Credit Card Fraud Detection](https://www.kaggle.com/datasets/kartik2112/fraud-detection)
 
-## ✨ Key Features
-* **Instant Prediction:** Input transaction details manually to get an immediate "Fraud" or "Legitimate" classification.
-* **Probability Scores:** View the confidence level of the model for each prediction.
-* **Smart Preprocessing:** Automatically extracts time-based features (Hour, Day, Month) and calculates distances between the user and the merchant.
-* **Handling Unseen Data:** The application includes logic to handle categorical values not seen during the training phase.
+## 🛠️ Tech Stack
+* **Language:** Python
+* **Framework:** Streamlit (Web App Interface)
+* **Libraries:** Scikit-learn, XGBoost, Pandas, Numpy, Joblib
+* **Model:** XGBoost Classifier
 
-## 🛠️ Installation & Usage
+## 🚀 How to Run Locally
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/YourUsername/Credit_card_fraud_detection_App.git](https://github.com/YourUsername/Credit_card_fraud_detection_App.git)
+    cd Credit_card_fraud_detection_App
+    ```
+2.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Launch the app:**
+    ```bash
+    streamlit run app.py
+    ```
 
-### 1. Clone the repository
-```bash
-git clone [https://github.com/YOUR_USERNAME/Credit_card_fraud_detection_App.git](https://github.com/YOUR_USERNAME/Credit_card_fraud_detection_App.git)
-cd Credit_card_fraud_detection_App
+## 📂 Project Structure
+* `app.py`: The main Streamlit application script.
+* `Credit_card_fraud_detection.ipynb`: Jupyter notebook containing the full data analysis, preprocessing, and model training workflow.
+* `model.pkl`: The trained XGBoost model.
+* `scaler.pkl`: Saved StandardScaler object for feature normalization.
+* `encoders.pkl`: Dictionary containing LabelEncoders for categorical features.
+* `requirements.txt`: List of required libraries for deployment.
+
+---
+*Created for Financial Security and Fraud Awareness.*
